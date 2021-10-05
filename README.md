@@ -1,3 +1,3 @@
 # PrismaTrade
 
-Sample project to create Plugins for Bukkit.
+Real-time massive trading with Minecraft items between players.
