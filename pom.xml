@@ -3,12 +3,12 @@
     
     <!-- Project information -->
     <groupId>me.sammwy</groupId>
-    <artifactId>ExamplePlugin</artifactId>
+    <artifactId>PrismaTrade</artifactId>
     <packaging>jar</packaging>
 
     <!-- Plugin Information -->
-    <name>ExamplePlugin</name>
-    <description>This is just an example plugin</description>
+    <name>PrismaTrade</name>
+    <description>Real-time massive trading with Minecraft items between players.</description>
     <version>0.0.1</version>
     <url>https://twitter.com/sammwy</url>
 
