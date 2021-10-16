@@ -5,6 +5,6 @@ main: ${mainClass}
 version: ${version}
 url: ${url}
 commands:
-  example:
-    aliases: ["ex"]
-    description: "This is an example plugin."
+  trade:
+    aliases: ["shop", "ah", "auction"]
+    description: "Open the trading menu."
