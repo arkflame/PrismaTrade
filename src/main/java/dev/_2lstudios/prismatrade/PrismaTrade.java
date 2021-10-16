@@ -1,12 +1,12 @@
-package me.sammwy.example;
+package dev._2lstudios.prismatrade;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.sammwy.example.commands.ExampleCommand;
-import me.sammwy.example.listeners.PlayerJoinListener;
-import me.sammwy.example.tasks.ExampleTask;
+import dev._2lstudios.prismatrade.commands.ExampleCommand;
+import dev._2lstudios.prismatrade.listeners.PlayerJoinListener;
+import dev._2lstudios.prismatrade.tasks.ExampleTask;
 
-public class ExamplePlugin extends JavaPlugin {
+public class PrismaTrade extends JavaPlugin {
     
     @Override
     public void onEnable () {
@@ -14,7 +14,7 @@ public class ExamplePlugin extends JavaPlugin {
         this.saveDefaultConfig();
 
         // Set static instance
-        ExamplePlugin.instance = this;
+        PrismaTrade.instance = this;
 
         // Register the example command
         this.getCommand("example").setExecutor(new ExampleCommand());
@@ -27,9 +27,9 @@ public class ExamplePlugin extends JavaPlugin {
         this.getServer().getScheduler().runTaskTimer(this, new ExampleTask(), taskRepeatEvery, taskRepeatEvery);
     }
 
-    private static ExamplePlugin instance;
+    private static PrismaTrade instance;
 
-    public static ExamplePlugin getInstance () {
-        return ExamplePlugin.instance;
+    public static PrismaTrade getInstance () {
+        return PrismaTrade.instance;
     }
 }
