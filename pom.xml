@@ -21,6 +21,10 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>2lstudios-repo</id>
+            <url>https://ci.2lstudios.dev/plugin/repository/everything/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -29,6 +33,16 @@
             <artifactId>spigot-api</artifactId>
             <version>1.17.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>dev._2lstudios</groupId>
+            <artifactId>HyperMenus</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dotphin</groupId>
+            <artifactId>milkshake-orm</artifactId>
+            <version>0.1-BETA</version>
         </dependency>
     </dependencies>
 
