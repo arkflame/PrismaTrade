@@ -38,6 +38,7 @@
             <groupId>dev._2lstudios</groupId>
             <artifactId>HyperMenus</artifactId>
             <version>0.0.2</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.dotphin</groupId>
