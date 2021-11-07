@@ -7,7 +7,7 @@ import dev._2lstudios.hypermenus.api.MenuItem;
 public class InventoryMenuItem extends MenuItem {
     public InventoryMenuItem() {
         // TODO: Set displayname and lore
-        setDisplayname("Sell");
+        setDisplayname("Inventory");
     }
 
     @Override
