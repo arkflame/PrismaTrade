@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import dev._2lstudios.prismatrade.commands.TradeCommand;
 import dev._2lstudios.prismatrade.listeners.PlayerJoinListener;
+import dev._2lstudios.prismatrade.menus.PrismaTradeMenu;
 
 public class PrismaTrade extends JavaPlugin {
     private static PrismaTrade instance;
@@ -12,6 +13,8 @@ public class PrismaTrade extends JavaPlugin {
     public static PrismaTrade getInstance () {
         return PrismaTrade.instance;
     }
+
+    private PrismaTradeMenu prismaTradeMenu;
 
     @Override
     public void onEnable () {
@@ -21,8 +24,14 @@ public class PrismaTrade extends JavaPlugin {
 
         PrismaTrade.instance = this;
 
-        getCommand("trade").setExecutor(new TradeCommand());
+        prismaTradeMenu = new PrismaTradeMenu();
+
+        getCommand("trade").setExecutor(new TradeCommand(this));
         
         pluginManager.registerEvents(new PlayerJoinListener(), this);
+    }
+
+    public PrismaTradeMenu getMenu() {
+        return prismaTradeMenu;
     }
 }

@@ -6,10 +6,14 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import dev._2lstudios.hypermenus.HyperMenus;
-import dev._2lstudios.prismatrade.menus.PrismaTradeMenu;
+import dev._2lstudios.prismatrade.PrismaTrade;
 
 public class TradeCommand implements CommandExecutor {
-    private final PrismaTradeMenu prismaTradeMenu = new PrismaTradeMenu();
+    private final PrismaTrade prismaTrade;
+
+    public TradeCommand(final PrismaTrade prismaTrade) {
+        this.prismaTrade = prismaTrade;
+    }
 
     @Override
     public boolean onCommand(final CommandSender sender, final Command command, final String label,
@@ -17,7 +21,7 @@ public class TradeCommand implements CommandExecutor {
         if (sender instanceof Player) {
             final Player player = (Player) sender;
 
-            HyperMenus.getAPI().openMenu(player, prismaTradeMenu);
+            HyperMenus.getAPI().openMenu(player, prismaTrade.getMenu());
         } else {
 
         }
