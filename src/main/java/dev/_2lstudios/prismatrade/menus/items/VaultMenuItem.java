@@ -4,10 +4,10 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 
 import dev._2lstudios.hypermenus.api.MenuItem;
 
-public class InventoryMenuItem extends MenuItem {
-    public InventoryMenuItem() {
+public class VaultMenuItem extends MenuItem {
+    public VaultMenuItem() {
         // TODO: Set displayname and lore
-        setDisplayname("Inventory");
+        setDisplayname("Vault");
     }
 
     @Override
