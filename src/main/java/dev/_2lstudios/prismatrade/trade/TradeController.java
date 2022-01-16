@@ -2,6 +2,7 @@ package dev._2lstudios.prismatrade.trade;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 public class TradeController {
     private TradeService tradeService;
@@ -69,5 +70,15 @@ public class TradeController {
         if (amount > 0) {
             tradeService.addOffer(new OfferEntity(amount, materialName, durability, player.getUniqueId().toString(), price));
         }
+    }
+
+    public void sell(Player player, ItemStack item, double price) {
+        Material material = item.getType();
+        int amount = item.getAmount();
+        int durability = item.getDurability();
+
+        sell(player, material, durability, amount, price);
+
+        item.setAmount(0);
     }
 }

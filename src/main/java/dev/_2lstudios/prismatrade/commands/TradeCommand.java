@@ -23,7 +23,7 @@ public class TradeCommand implements CommandExecutor {
 
             HyperMenus.getAPI().openMenu(player, prismaTrade.getMenu());
         } else {
-
+            sender.sendMessage("Cannot use this command from the console");
         }
 
         return true;

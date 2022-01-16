@@ -13,6 +13,7 @@ public class OrderItem extends MenuItem {
 
     @Override
     public void onClick(final InventoryClickEvent event) {
-        // TODO: Open buy menu
+        // TODO: Cancel order clicked by owner
+        // TODO: Buy/Sell depending on type of order
     }
 }

@@ -6,7 +6,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 
 import dev._2lstudios.hypermenus.HyperMenus;
 import dev._2lstudios.hypermenus.api.MenuItem;
-import dev._2lstudios.prismatrade.menus.CategoryMenu;
+import dev._2lstudios.prismatrade.menus.CategoriesMenu;
 import dev._2lstudios.prismatrade.trade.TradeService;
 import dev._2lstudios.prismatrade.trade.TradeType;
 
@@ -31,6 +31,6 @@ public class CategoryMenuItem extends MenuItem {
 
         Player player = (Player) whoClicked;
 
-        HyperMenus.getAPI().openMenu(player, new CategoryMenu(tradeService, 0, tradeType));
+        HyperMenus.getAPI().openMenu(player, new CategoriesMenu(tradeService, 0, tradeType));
     }
 }
