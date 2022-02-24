@@ -62,20 +62,21 @@ public class TradeService {
     }
 
     public DemandEntity[] getDemands(int limit, int skip) {
-        // TODO: SKIP
-        // TODO: LIMIT
-        DemandEntity[] demandEntities = demands.findMany(Collections.EMPTY_MAP, FindOption.create().sort("price"));
+        DemandEntity[] demandEntities = demands.findMany(Collections.EMPTY_MAP,
+                FindOption.create().sort("price").skip(limit).skip(skip));
 
         return demandEntities;
     }
 
     public DemandEntity[] getDemands(String material, int limit, int skip) {
-        // TODO: SKIP
-        // TODO: LIMIT
         DemandEntity[] demandEntities = demands.findMany(MapFactory.create("material", material),
-                FindOption.create().sort("price"));
+                FindOption.create().sort("price").skip(limit).skip(skip));
 
         return demandEntities;
+    }
+
+    public void clearCategories() {
+        demands.deleteMany(Collections.EMPTY_MAP);
     }
 
     public void addDemand(DemandEntity demandEntity) {
@@ -89,18 +90,15 @@ public class TradeService {
     }
 
     public OfferEntity[] getOffers(int limit, int skip) {
-        // TODO: SKIP
-        // TODO: LIMIT
-        OfferEntity[] offerEntities = offers.findMany(Collections.EMPTY_MAP, FindOption.create().sort("price"));
+        OfferEntity[] offerEntities = offers.findMany(Collections.EMPTY_MAP,
+                FindOption.create().sort("price").skip(limit).skip(skip));
 
         return offerEntities;
     }
 
     public OfferEntity[] getOffers(String material, int limit, int skip) {
-        // TODO: SKIP
-        // TODO: LIMIT
         OfferEntity[] offerEntities = offers.findMany(MapFactory.create("material", material),
-                FindOption.create().sort("price"));
+                FindOption.create().sort("price").skip(limit).skip(skip));
 
         return offerEntities;
     }

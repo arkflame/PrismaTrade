@@ -7,13 +7,7 @@ import dev._2lstudios.prismatrade.menus.items.VaultMenuItem;
 import dev._2lstudios.prismatrade.menus.items.CategoryMenuItem;
 
 public class PrismaTradeMenu extends Menu {
-    private TradeService tradeService;
-
     public PrismaTradeMenu(TradeService tradeService) {
-        this.tradeService = tradeService;
-    }
-
-    public PrismaTradeMenu() {
         setSize(27);
         setItem(10, new CategoryMenuItem(tradeService, TradeType.BUY));
         setItem(13, new CategoryMenuItem(tradeService, TradeType.SELL));

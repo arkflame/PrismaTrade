@@ -18,7 +18,18 @@ public class TradeCommand implements CommandExecutor {
     @Override
     public boolean onCommand(final CommandSender sender, final Command command, final String label,
             final String[] args) {
-        if (sender instanceof Player) {
+        if (args.length > 0) {
+            if (sender.hasPermission("trade.admin")) {
+            if (args[0].equals("clearcategories")) {
+                sender.sendMessage("Cleared categories");
+                prismaTrade.getTradeService().clearCategories();
+            } else {
+                sender.sendMessage("Invalid argument");
+            }
+        } else {
+            sender.sendMessage("Requires trade.admin permission");
+        }
+        } else if (sender instanceof Player) {
             final Player player = (Player) sender;
 
             HyperMenus.getAPI().openMenu(player, prismaTrade.getMenu());

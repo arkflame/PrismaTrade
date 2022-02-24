@@ -43,7 +43,7 @@
         <dependency>
             <groupId>dev._2lstudios</groupId>
             <artifactId>Milkshake-Bukkit</artifactId>
-            <version>0.1-BETA</version>
+            <version>0.2-BETA</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
