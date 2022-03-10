@@ -11,7 +11,7 @@ public class TakeAllItem extends MenuItem {
     }
 
     @Override
-    public void onClick(final InventoryClickEvent event) {
+    public void onClick(InventoryClickEvent event) {
         // TODO: Take all items from inventory
     }
 }

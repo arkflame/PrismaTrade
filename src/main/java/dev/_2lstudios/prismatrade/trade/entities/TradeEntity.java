@@ -1,12 +1,15 @@
-package dev._2lstudios.prismatrade.trade;
+package dev._2lstudios.prismatrade.trade.entities;
 
 import com.dotphin.milkshakeorm.entity.Entity;
 import com.dotphin.milkshakeorm.entity.ID;
 import com.dotphin.milkshakeorm.entity.Prop;
 
-public class VaultItemEntity extends Entity {
+public class TradeEntity extends Entity {
     @ID
     public String id;
+
+    @Prop
+    public int amount;
 
     @Prop
     public String material;
@@ -18,12 +21,15 @@ public class VaultItemEntity extends Entity {
     public String ownerId;
 
     @Prop
-    public int amount;
+    public double price;
 
-    public VaultItemEntity(String material, int durability, String ownerId, int amount) {
+    public TradeEntity() {}
+
+    public TradeEntity(int amount, String material, int durability, String ownerId, double price) {
+        this.amount = amount;
         this.material = material;
         this.durability = durability;
         this.ownerId = ownerId;
-        this.amount = amount;
+        this.price = price;
     }
 }

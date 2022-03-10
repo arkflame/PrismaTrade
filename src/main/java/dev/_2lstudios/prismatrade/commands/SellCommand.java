@@ -19,21 +19,25 @@ public class SellCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
-            if (args.length > 0) {
-                String priceText = args[0];
+            if (sender.hasPermission("trade.sell")) {
+                if (args.length > 0) {
+                    String priceText = args[0];
 
-                try {
-                    double price = Double.parseDouble(priceText);
-                    Player player = (Player) sender;
-                    PlayerInventory inventory = player.getInventory();
-                    ItemStack item = inventory.getItem(inventory.getHeldItemSlot());
+                    try {
+                        double price = Double.parseDouble(priceText);
+                        Player player = (Player) sender;
+                        PlayerInventory inventory = player.getInventory();
+                        ItemStack item = inventory.getItem(inventory.getHeldItemSlot());
 
-                    tradeController.sell(player, item, price);
-                } catch (NumberFormatException e) {
-                    sender.sendMessage("Invalid number: " + priceText);
+                        tradeController.sell(player, item, price);
+                    } catch (NumberFormatException e) {
+                        sender.sendMessage("Invalid number: " + priceText);
+                    }
+                } else {
+                    sender.sendMessage("/sell <price>");
                 }
             } else {
-                sender.sendMessage("/sell <price>");
+                sender.sendMessage("No permission to sell");
             }
         } else {
             sender.sendMessage("Cannot use this command from the console");

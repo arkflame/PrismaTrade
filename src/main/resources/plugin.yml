@@ -7,4 +7,6 @@ url: ${url}
 commands:
   trade:
     aliases: ["shop", "ah", "auction"]
-    description: "Open the trading menu."
+    description: "Open the trading menu"
+  sell:
+    description: "Sell items from your hand"

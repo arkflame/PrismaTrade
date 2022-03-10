@@ -9,9 +9,10 @@ import dev._2lstudios.prismatrade.menus.items.CategoryMenuItem;
 public class PrismaTradeMenu extends Menu {
     public PrismaTradeMenu(TradeService tradeService) {
         setSize(27);
-        setItem(10, new CategoryMenuItem(tradeService, TradeType.BUY));
-        setItem(13, new CategoryMenuItem(tradeService, TradeType.SELL));
+        setItem(10, new CategoryMenuItem(this, tradeService, TradeType.OFFER));
+        setItem(13, new CategoryMenuItem(this, tradeService, TradeType.DEMAND));
         setItem(16, new VaultMenuItem());
+        setItem(22, new CloseMenuItem());
         setTitle("PrismaTrade");
     }
 }

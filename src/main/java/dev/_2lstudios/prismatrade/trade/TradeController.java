@@ -4,8 +4,16 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import dev._2lstudios.prismatrade.trade.entities.DemandEntity;
+import dev._2lstudios.prismatrade.trade.entities.OfferEntity;
+import dev._2lstudios.prismatrade.trade.entities.VaultItemEntity;
+
 public class TradeController {
     private TradeService tradeService;
+
+    public TradeController(TradeService tradeService) {
+        this.tradeService = tradeService;
+    }
 
     public void buy(Player player, Material material, int durability, int amount, double price) {
         String materialName = material.name();
@@ -68,7 +76,8 @@ public class TradeController {
         }
 
         if (amount > 0) {
-            tradeService.addOffer(new OfferEntity(amount, materialName, durability, player.getUniqueId().toString(), price));
+            tradeService.addOffer(
+                    new OfferEntity(amount, materialName, durability, player.getUniqueId().toString(), price));
         }
     }
 

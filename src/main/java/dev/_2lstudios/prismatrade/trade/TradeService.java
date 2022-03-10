@@ -13,6 +13,11 @@ import com.dotphin.milkshakeorm.utils.MapFactory;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.plugin.Plugin;
 
+import dev._2lstudios.prismatrade.trade.entities.CategoryEntity;
+import dev._2lstudios.prismatrade.trade.entities.DemandEntity;
+import dev._2lstudios.prismatrade.trade.entities.OfferEntity;
+import dev._2lstudios.prismatrade.trade.entities.VaultItemEntity;
+
 public class TradeService {
     private Repository<CategoryEntity> categories;
     private Repository<DemandEntity> demands;
@@ -41,14 +46,11 @@ public class TradeService {
     }
 
     public void addCategory(CategoryEntity categoryEntity) {
-        CategoryEntity category = getCategory(categoryEntity.name);
+        CategoryEntity foundCategory = getCategory(categoryEntity.name);
 
         try {
-            if (category == null) {
-                categories.save(category);
-            } else {
-                category.id = categoryEntity.id;
-                categories.save(category);
+            if (foundCategory == null) {
+                categories.save(categoryEntity);
             }
         } catch (NotIDAnnotationException e) {
             /* Ignored */
@@ -76,7 +78,7 @@ public class TradeService {
     }
 
     public void clearCategories() {
-        demands.deleteMany(Collections.EMPTY_MAP);
+        categories.deleteMany(Collections.EMPTY_MAP);
     }
 
     public void addDemand(DemandEntity demandEntity) {

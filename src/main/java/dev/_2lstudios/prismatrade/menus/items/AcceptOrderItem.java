@@ -11,7 +11,7 @@ public class AcceptOrderItem extends MenuItem {
     }
 
     @Override
-    public void onClick(final InventoryClickEvent event) {
+    public void onClick(InventoryClickEvent event) {
         // TODO: Open buy menu
     }
 }

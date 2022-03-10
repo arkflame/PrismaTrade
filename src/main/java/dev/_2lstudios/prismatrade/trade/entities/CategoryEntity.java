@@ -1,4 +1,4 @@
-package dev._2lstudios.prismatrade.trade;
+package dev._2lstudios.prismatrade.trade.entities;
 
 import com.dotphin.milkshakeorm.entity.Entity;
 import com.dotphin.milkshakeorm.entity.ID;
@@ -10,6 +10,8 @@ public class CategoryEntity extends Entity {
 
     @Prop
     public String name;
+
+    public CategoryEntity() {}
 
     public CategoryEntity(String name) {
         this.name = name;
