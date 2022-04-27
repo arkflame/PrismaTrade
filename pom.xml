@@ -36,14 +36,14 @@
         </dependency>
         <dependency>
             <groupId>dev._2lstudios</groupId>
-            <artifactId>HyperMenus</artifactId>
-            <version>0.0.6</version>
+            <artifactId>InterfaceMaker</artifactId>
+            <version>0.0.7</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>dev._2lstudios</groupId>
             <artifactId>Milkshake-Bukkit</artifactId>
-            <version>0.2-BETA</version>
+            <version>0.5-BETA</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

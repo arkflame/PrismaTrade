@@ -8,5 +8,7 @@ commands:
   trade:
     aliases: ["shop", "ah", "auction"]
     description: "Open the trading menu"
+  buy:
+    description: "Buy items from the shop"
   sell:
     description: "Sell items from your hand"
