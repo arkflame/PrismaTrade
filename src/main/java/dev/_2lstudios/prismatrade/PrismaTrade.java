@@ -19,10 +19,10 @@ public class PrismaTrade extends JavaPlugin {
         saveDefaultConfig();
 
         Configuration config = getConfig();
-        PrismaTrade.api = new PrismaTradeAPI(config);
-        SellCommand sellCommand = new SellCommand();
-        BuyCommand buyCommand = new BuyCommand();
-        TradeCommand tradeCommand = new TradeCommand();
+        PrismaTrade.api = new PrismaTradeAPI(getServer(), config);
+        SellCommand sellCommand = new SellCommand(api);
+        BuyCommand buyCommand = new BuyCommand(api);
+        TradeCommand tradeCommand = new TradeCommand(api);
 
         getCommand("sell").setExecutor(sellCommand);
         getCommand("buy").setExecutor(buyCommand);

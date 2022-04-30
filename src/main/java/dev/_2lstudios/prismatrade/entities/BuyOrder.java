@@ -1,5 +1,7 @@
 package dev._2lstudios.prismatrade.entities;
 
+import java.util.UUID;
+
 import com.dotphin.milkshakeorm.entity.Entity;
 import com.dotphin.milkshakeorm.entity.ID;
 import com.dotphin.milkshakeorm.entity.Prop;
@@ -18,6 +20,31 @@ public class BuyOrder extends Entity {
 
     @Prop
     public int amount;
+    @Prop
+    public String ownerName;
+
+    @Prop
+    public String ownerUUID;
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public BuyOrder setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+
+        return this;
+    }
+
+    public UUID getOwnerUUID() {
+        return UUID.fromString(ownerUUID);
+    }
+
+    public BuyOrder setOwnerUUID(UUID uuid) {
+        this.ownerUUID = uuid.toString();
+
+        return this;
+    }
 
     public String getId() {
         return id;

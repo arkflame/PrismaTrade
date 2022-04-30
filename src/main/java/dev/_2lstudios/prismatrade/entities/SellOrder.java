@@ -1,7 +1,6 @@
 package dev._2lstudios.prismatrade.entities;
 
 import java.io.IOException;
-import java.util.UUID;
 
 import com.dotphin.milkshakeorm.entity.Prop;
 
@@ -12,32 +11,6 @@ import dev._2lstudios.prismatrade.utils.BukkitSerialization;
 public class SellOrder extends BuyOrder {
     @Prop
     public String serializedItem;
-
-    @Prop
-    public String ownerName;
-
-    @Prop
-    public String ownerUUID;
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public SellOrder setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-
-        return this;
-    }
-
-    public UUID getOwnerUUID() {
-        return UUID.fromString(ownerUUID);
-    }
-
-    public SellOrder setOwnerUUID(UUID uuid) {
-        this.ownerUUID = uuid.toString();
-
-        return this;
-    }
 
     public ItemStack getItemStack() {
         if (serializedItem != null) {
