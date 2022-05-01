@@ -12,3 +12,7 @@ messages:
   sell-item-lore: ""
   category-menu-title: "Categories %type% - %page%"
   back-name: "&aGo Back"
+  sell-entry-name: "&a%category% (x%amount%)"
+  sell-entry-lore: "Owner: %owner%\nPrice: %price%"
+  buy-entry-name: "&a%category% (x%amount%)"
+  buy-entry-lore: "Owner: %owner%\nPrice: %price%"

@@ -1,33 +1,34 @@
 package dev._2lstudios.prismatrade.interfaces.menus;
 
+import org.bukkit.Material;
 import org.bukkit.configuration.Configuration;
 
 import dev._2lstudios.interfacemaker.interfaces.InterfaceItem;
 import dev._2lstudios.interfacemaker.interfaces.InterfaceMenu;
 import dev._2lstudios.interfacemaker.interfaces.contexts.MenuBuildContext;
 import dev._2lstudios.prismatrade.PrismaTradeAPI;
-import dev._2lstudios.prismatrade.entities.Category;
+import dev._2lstudios.prismatrade.entities.BuyOrder;
 import dev._2lstudios.prismatrade.interfaces.items.BackItem;
-import dev._2lstudios.prismatrade.interfaces.items.CategoryEntryItem;
+import dev._2lstudios.prismatrade.interfaces.items.BuyEntryItem;
 import dev._2lstudios.prismatrade.interfaces.items.PageItem;
 import dev._2lstudios.prismatrade.interfaces.items.PageType;
 import dev._2lstudios.prismatrade.utils.Placeholder;
 
-public class CategoryMenu extends PageMenu {
+public class BuyMenu extends PageMenu {
     private static int MAX_ENTRY_COUNT = 21;
 
     private Configuration config;
     private PrismaTradeAPI prismaTrade;
-    private OrderType orderType;
+    private Material material;
     private InterfaceMenu lastMenu;
     private int skipAmount;
 
-    public CategoryMenu(int page, Configuration config, PrismaTradeAPI prismaTrade, OrderType orderType,
+    public BuyMenu(int page, Configuration config, PrismaTradeAPI prismaTrade, Material material,
             InterfaceMenu lastMenu) {
         super(page);
         this.config = config;
         this.prismaTrade = prismaTrade;
-        this.orderType = orderType;
+        this.material = material;
         this.lastMenu = lastMenu;
         this.skipAmount = (page - 1) * MAX_ENTRY_COUNT;
         setRows(6);
@@ -35,33 +36,33 @@ public class CategoryMenu extends PageMenu {
 
     @Override
     public void onBuild(MenuBuildContext context) {
-        Category[] dataFound = prismaTrade.getCategories(skipAmount,
+        BuyOrder[] dataFound = prismaTrade.getBuyOrders(material, skipAmount,
                 MAX_ENTRY_COUNT + 1);
-        InterfaceItem[] heads = new InterfaceItem[MAX_ENTRY_COUNT];
+        InterfaceItem[] orderItems = new InterfaceItem[MAX_ENTRY_COUNT];
 
         context.setTitle(Placeholder.color(config.getString("messages.category-menu-title")
-                .replace("%page%", String.valueOf(getPage())).replace("%type%", orderType.name())));
+                .replace("%page%", String.valueOf(getPage())).replace("%type%", "BUY")));
 
         for (int i = 0; i < MAX_ENTRY_COUNT && i < dataFound.length; i++) {
-            Category data = dataFound[i];
-            InterfaceItem item = new CategoryEntryItem(config, data, prismaTrade, orderType, lastMenu);
+            BuyOrder data = dataFound[i];
+            InterfaceItem item = new BuyEntryItem(config, data, prismaTrade, lastMenu);
 
-            heads[i] = item;
+            orderItems[i] = item;
         }
 
-        context.fill(1, heads);
+        context.fill(1, orderItems);
 
         int page = getPage();
 
         if (page > 1) {
-            context.setItem(45, new PageItem(config, new CategoryMenu(page - 1, config, prismaTrade, orderType, lastMenu),
+            context.setItem(45, new PageItem(config, new BuyMenu(page - 1, config, prismaTrade, material, lastMenu),
                     PageType.PREVIOUS));
         } else {
             context.setItem(45, new BackItem(config, lastMenu));
         }
 
         if (dataFound.length > MAX_ENTRY_COUNT) {
-            context.setItem(53, new PageItem(config, new CategoryMenu(page + 1, config, prismaTrade, orderType, lastMenu),
+            context.setItem(53, new PageItem(config, new BuyMenu(page + 1, config, prismaTrade, material, lastMenu),
                     PageType.NEXT));
         }
     }
