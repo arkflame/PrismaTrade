@@ -22,7 +22,7 @@ public class PrismaTrade extends JavaPlugin {
         PrismaTrade.api = new PrismaTradeAPI(getServer(), config);
         SellCommand sellCommand = new SellCommand(api);
         BuyCommand buyCommand = new BuyCommand(api);
-        TradeCommand tradeCommand = new TradeCommand(api);
+        TradeCommand tradeCommand = new TradeCommand(config, api);
 
         getCommand("sell").setExecutor(sellCommand);
         getCommand("buy").setExecutor(buyCommand);

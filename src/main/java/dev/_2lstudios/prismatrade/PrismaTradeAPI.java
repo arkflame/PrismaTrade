@@ -38,7 +38,7 @@ public class PrismaTradeAPI {
         this.buyOrderRepository = MilkshakeORM.addRepository(BuyOrder.class, provider);
     }
 
-    public Category[] getCategories(int limit, int skip) {
+    public Category[] getCategories(int skip, int limit) {
         return categoryRepository.findMany(Collections.EMPTY_MAP,
                 FindOption.create().skip(skip).limit(limit));
     }
@@ -71,6 +71,17 @@ public class PrismaTradeAPI {
 
     public double getUnitaryPrice(int amount, double price) {
         return price / amount;
+    }
+
+    public void addCategory(Material material) {
+        String materialName = material.name();
+
+        if (categoryRepository.findOne(MapFactory.create("name", materialName)) == null) {
+            Category category = new Category();
+
+            category.setName(materialName);
+            category.save();
+        }
     }
 
     public void buy(Player buyerPlayer, Material material, int buyAmount, double buyPrice) {
@@ -124,6 +135,8 @@ public class PrismaTradeAPI {
         }
 
         if (buyAmount > 0) {
+            addCategory(material);
+
             BuyOrder buyOrder = new BuyOrder();
 
             buyOrder.setOwnerName(buyerPlayer.getName());
@@ -186,6 +199,8 @@ public class PrismaTradeAPI {
         }
 
         if (sellAmount > 0) {
+            addCategory(material);
+
             SellOrder sellOrder = new SellOrder();
 
             sellOrder.setOwnerName(sellerPlayer.getName());
