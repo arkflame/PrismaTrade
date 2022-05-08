@@ -40,12 +40,12 @@ public class BuyMenu extends PageMenu {
                 MAX_ENTRY_COUNT + 1);
         InterfaceItem[] orderItems = new InterfaceItem[MAX_ENTRY_COUNT];
 
-        context.setTitle(Placeholder.color(config.getString("messages.category-menu-title")
+        context.setTitle(Placeholder.color(config.getString("messages.buy-menu-title")
                 .replace("%page%", String.valueOf(getPage())).replace("%type%", "BUY")));
 
         for (int i = 0; i < MAX_ENTRY_COUNT && i < dataFound.length; i++) {
             BuyOrder data = dataFound[i];
-            InterfaceItem item = new BuyEntryItem(config, data, prismaTrade, lastMenu);
+            InterfaceItem item = new BuyEntryItem(config, data, prismaTrade);
 
             orderItems[i] = item;
         }

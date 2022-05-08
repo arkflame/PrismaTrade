@@ -6,7 +6,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
 import dev._2lstudios.interfacemaker.interfaces.InterfaceItem;
-import dev._2lstudios.interfacemaker.interfaces.InterfaceMenu;
 import dev._2lstudios.prismatrade.PrismaTradeAPI;
 import dev._2lstudios.prismatrade.entities.SellOrder;
 
@@ -14,10 +13,8 @@ public class SellEntryItem extends InterfaceItem {
     private Configuration config;
     private SellOrder sellOrder;
     private PrismaTradeAPI prismaTrade;
-    private InterfaceMenu lastMenu;
 
-    public SellEntryItem(Configuration config, SellOrder sellOrder, PrismaTradeAPI prismaTrade,
-            InterfaceMenu lastMenu) {
+    public SellEntryItem(Configuration config, SellOrder sellOrder, PrismaTradeAPI prismaTrade) {
         Material material = sellOrder.getMaterial();
         String materialName = material.name();
         String amount = String.valueOf(sellOrder.getAmount());
@@ -27,7 +24,7 @@ public class SellEntryItem extends InterfaceItem {
         this.config = config;
         this.sellOrder = sellOrder;
         this.prismaTrade = prismaTrade;
-        this.lastMenu = lastMenu;
+
         setType(material);
         setName(config.getString("messages.sell-entry-name").replace("%category%", materialName)
                 .replace("%amount%", amount).replace("%price%", price).replace("%owner%", owner));
@@ -37,6 +34,6 @@ public class SellEntryItem extends InterfaceItem {
 
     @Override
     public void onClick(Player player, Inventory clickedInventory) {
-
+        prismaTrade.buy(player, sellOrder);
     }
 }

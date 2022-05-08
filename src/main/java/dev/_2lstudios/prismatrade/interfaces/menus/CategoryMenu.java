@@ -44,7 +44,7 @@ public class CategoryMenu extends PageMenu {
 
         for (int i = 0; i < MAX_ENTRY_COUNT && i < dataFound.length; i++) {
             Category data = dataFound[i];
-            InterfaceItem item = new CategoryEntryItem(config, data, prismaTrade, orderType, lastMenu);
+            InterfaceItem item = new CategoryEntryItem(config, data, prismaTrade, orderType, this);
 
             heads[i] = item;
         }

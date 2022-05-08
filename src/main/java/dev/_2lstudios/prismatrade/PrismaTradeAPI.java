@@ -56,6 +56,10 @@ public class PrismaTradeAPI {
                 FindOption.create().sort("id").sort("price", SortOrder.DESCENDANT).skip(skip).limit(limit));
     }
 
+    public SellOrder getSellOrderByID(String id) {
+        return sellOrderRepository.findOne(MapFactory.create("id", id));
+    }
+
     public BuyOrder[] getBuyOrders(Material material, int limit, int skip) {
         Map<String, Object> filter;
 
@@ -67,6 +71,10 @@ public class PrismaTradeAPI {
 
         return buyOrderRepository.findMany(filter,
                 FindOption.create().sort("id").sort("price", SortOrder.ASCENDANT).skip(skip).limit(limit));
+    }
+
+    public BuyOrder getBuyOrderByID(String id) {
+        return buyOrderRepository.findOne(MapFactory.create("id", id));
     }
 
     public double getUnitaryPrice(int amount, double price) {
@@ -210,6 +218,23 @@ public class PrismaTradeAPI {
             sellOrder.setAmount(sellAmount);
             sellOrder.setPrice(sellUnitaryPrice * sellAmount);
             sellOrder.save();
+        }
+    }
+
+    public void buy(Player player, SellOrder sellOrder) {
+        double money = 10000;
+        double sellPrice = sellOrder.getPrice();
+
+        if (money >= sellPrice) {
+            sellOrder.delete();
+
+            ItemStack itemToGive = sellOrder.getItemStack().clone();
+
+            itemToGive.setAmount(sellOrder.getAmount());
+
+            player.getInventory().addItem(itemToGive);
+
+            // TODO: Give money to seller
         }
     }
 }

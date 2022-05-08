@@ -40,12 +40,12 @@ public class SellMenu extends PageMenu {
                 MAX_ENTRY_COUNT + 1);
         InterfaceItem[] orderItems = new InterfaceItem[MAX_ENTRY_COUNT];
 
-        context.setTitle(Placeholder.color(config.getString("messages.category-menu-title")
+        context.setTitle(Placeholder.color(config.getString("messages.sell-menu-title")
                 .replace("%page%", String.valueOf(getPage())).replace("%type%", "SELL")));
 
         for (int i = 0; i < MAX_ENTRY_COUNT && i < dataFound.length; i++) {
             SellOrder data = dataFound[i];
-            InterfaceItem item = new SellEntryItem(config, data, prismaTrade, lastMenu);
+            InterfaceItem item = new SellEntryItem(config, data, prismaTrade);
 
             orderItems[i] = item;
         }

@@ -37,8 +37,10 @@ public class CategoryEntryItem extends InterfaceItem {
         switch (orderType) {
             case BUY:
                 new BuyMenu(1, config, prismaTrade, material, lastMenu).build(player);
+                break;
             case SELL:
                 new SellMenu(1, config, prismaTrade, material, lastMenu).build(player);
+                break;
             default:
                 break;
         }
