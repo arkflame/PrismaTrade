@@ -5,6 +5,9 @@ main: ${mainClass}
 version: ${version}
 url: ${url}
 commands:
+  prismatrade:
+    aliases: ["pt"]
+    description: "Admin Command for PrismaTrade"
   trade:
     aliases: ["shop", "ah", "auction"]
     description: "Open the trading menu"
