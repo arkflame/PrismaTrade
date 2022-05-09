@@ -29,7 +29,7 @@ public class Configuration extends YamlConfiguration {
     /* Utils methods */
     public void load() throws FileNotFoundException, IOException, InvalidConfigurationException {
         if (this.raw != null) {
-            this.load(this.raw);
+            this.loadFromString(this.raw);
         } else {
             this.load(this.file);
         }

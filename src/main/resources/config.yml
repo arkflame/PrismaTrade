@@ -1,2 +1,20 @@
 database:
   uri: "mongodb://localhost/minecraft"
+
+messages:
+  next-page-name: "&aNext Page (%page%)"
+  previous-page-name: "&aPrevious Page (%page%)"
+  category-entry-name: "&a%category%"
+  category-entry-lore: ""
+  buy-item-name: "&aSell"
+  buy-item-lore: ""
+  sell-item-name: "&aBuy"
+  sell-item-lore: ""
+  category-menu-title: "Categories %type% - %page%"
+  sell-menu-title: "Sellers %type% - %page%"
+  buy-menu-title: "Buyers %type% - %page%"
+  back-name: "&aGo Back"
+  sell-entry-name: "&a%category% (x%amount%)"
+  sell-entry-lore: "Owner: %owner%\nPrice: %price%"
+  buy-entry-name: "&a%category% (x%amount%)"
+  buy-entry-lore: "Owner: %owner%\nPrice: %price%"

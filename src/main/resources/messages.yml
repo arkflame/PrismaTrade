@@ -29,13 +29,13 @@ sell:
 
 # GUI messages
 menu:
-  back-item: "&ago Back"
+  back-item: "&aGo Back"
   prev-page-item: "&aNext Page (%page%)"
   next-page-item: "&aPrevious Page (%page%)"
   buy:
     title: "Buyers %type% - %page%"
     item:
-      name: "&aSell"
+      name: "&aBuy"
       lore: ""
     entry:
       name: "&a%name% (x%amount%)"
@@ -47,9 +47,9 @@ menu:
         &a&l&mCLICK TO BUY
         &7 
   category:
-    title: "%type% %page%"
+    title: "Categories %type% - %page%"
     entry:
-      name: "%category%"
+      name: "&a%category%"
       lore: |-
        &7 
        &7Click to explore this category.
@@ -57,7 +57,7 @@ menu:
   sell:
     title: "Sellers %type% - %page%"
     item:
-      name: "&a%name% ("
+      name: "&aSell"
       lore: ""
     entry:
       name: "&a%name% (x%amount%)"
