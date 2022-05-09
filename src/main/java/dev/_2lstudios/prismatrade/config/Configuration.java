@@ -59,21 +59,25 @@ public class Configuration extends YamlConfiguration {
     }
 
     /* Primitive object get */
-    public int getSafeInt(final String path) {
+    @Override
+    public int getInt(final String path) {
         this.setIfNotExist(path);
         return this.getInt(path);
     }
 
-    public int getSafeString(final String path) {
+    @Override
+    public String getString(final String path) {
         this.setIfNotExist(path);
-        return this.getInt(path);
+        return this.getString(path);
     }
 
-    public int getSafeBoolean(final String path) {
+    @Override
+    public boolean getBoolean(final String path) {
         this.setIfNotExist(path);
-        return this.getInt(path);
+        return this.getBoolean(path);
     }
 
+    @Override
     public List<String> getStringList(final String path) {
         this.setIfNotExist(path);
         return super.getStringList(path);
