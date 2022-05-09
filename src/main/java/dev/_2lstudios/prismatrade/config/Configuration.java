@@ -68,13 +68,13 @@ public class Configuration extends YamlConfiguration {
     @Override
     public String getString(final String path) {
         this.setIfNotExist(path);
-        return this.getString(path);
+        return super.getString(path);
     }
 
     @Override
     public boolean getBoolean(final String path) {
         this.setIfNotExist(path);
-        return this.getBoolean(path);
+        return super.getBoolean(path);
     }
 
     @Override
