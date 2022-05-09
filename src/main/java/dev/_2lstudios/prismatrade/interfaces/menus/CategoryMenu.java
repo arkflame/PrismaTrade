@@ -39,7 +39,7 @@ public class CategoryMenu extends PageMenu {
                 MAX_ENTRY_COUNT + 1);
         InterfaceItem[] heads = new InterfaceItem[MAX_ENTRY_COUNT];
 
-        context.setTitle(Placeholder.color(config.getString("messages.category-menu-title")
+        context.setTitle(Placeholder.color(config.getString("menu.category.title")
                 .replace("%page%", String.valueOf(getPage())).replace("%type%", orderType.name())));
 
         for (int i = 0; i < MAX_ENTRY_COUNT && i < dataFound.length; i++) {

@@ -22,8 +22,8 @@ public class SellItem extends InterfaceItem {
         this.prismaTrade = prismaTrade;
         this.menu = menu;
 
-        setName(config.getString("messages.sell-item-name"));
-        setLore(config.getString("messages.sell-item-lore"));
+        setName(config.getString("menu.sell.item.name"));
+        setLore(config.getString("menu.sell.item.lore"));
         setType(Material.GOLD_INGOT);
     }
 

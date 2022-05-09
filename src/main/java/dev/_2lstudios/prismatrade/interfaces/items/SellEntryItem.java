@@ -26,10 +26,18 @@ public class SellEntryItem extends InterfaceItem {
         this.prismaTrade = prismaTrade;
 
         setType(material);
-        setName(config.getString("messages.sell-entry-name").replace("%category%", materialName)
-                .replace("%amount%", amount).replace("%price%", price).replace("%owner%", owner));
-        setLore(config.getString("messages.sell-entry-lore").replace("%category%", materialName)
-                .replace("%amount%", amount).replace("%price%", price).replace("%owner%", owner));
+        setName(config.getString("menu.sell.entry.name")
+            .replace("%name%", materialName)
+            .replace("%amount%", amount)
+            .replace("%price%", price)
+            .replace("%owner%", owner)
+        );
+        setLore(config.getString("menu.sell.entry.lore")
+            .replace("%name%", materialName)
+            .replace("%amount%", amount)
+            .replace("%price%", price)
+            .replace("%owner%", owner)
+        );
     }
 
     @Override

@@ -22,8 +22,8 @@ public class BuyItem extends InterfaceItem {
         this.prismaTrade = prismaTrade;
         this.menu = menu;
 
-        setName(config.getString("messages.buy-item-name"));
-        setLore(config.getString("messages.buy-item-lore"));
+        setName(config.getString("menu.buy.item.name"));
+        setLore(config.getString("menu.buy.item.lore"));
         setType(Material.EMERALD);
     }
 

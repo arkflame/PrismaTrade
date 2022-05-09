@@ -13,7 +13,7 @@ public class TradeCommand extends BaseCommand {
     @Override
     public void onExecutedByPlayer(Player player, String label, String[] args) {
         TradeMenu menu = new TradeMenu(
-            this.getPlugin().getMainConfig(), 
+            this.getPlugin().getMessages(), 
             this.getAPI()
         );
         menu.build(player);

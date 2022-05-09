@@ -1,3 +1,4 @@
+# Commands messages
 common:
   not-in-console: "&cThis command cannot be executed from the Console."
   no-permission: "&cMissing permission {permission} to run this command."
@@ -25,3 +26,45 @@ sell:
   invalid-price: "&cPrice must be higher than 0."
   no-item-in-hand: "&cYou don't have any item in your hand to sell."
   placed: "&eSell order placed for {item} x{amount} at {price}$"
+
+# GUI messages
+menu:
+  back-item: "&ago Back"
+  prev-page-item: "&aNext Page (%page%)"
+  next-page-item: "&aPrevious Page (%page%)"
+  buy:
+    title: "Buyers %type% - %page%"
+    item:
+      name: "&aSell"
+      lore: ""
+    entry:
+      name: "&a%name% (x%amount%)"
+      lore: |-
+        &7 
+        &7Owner: &c%owner%
+        &7Price: &e%price%$
+        &7
+        &a&l&mCLICK TO BUY
+        &7 
+  category:
+    title: "%type% %page%"
+    entry:
+      name: "%category%"
+      lore: |-
+       &7 
+       &7Click to explore this category.
+       &7 
+  sell:
+    title: "Sellers %type% - %page%"
+    item:
+      name: "&a%name% ("
+      lore: ""
+    entry:
+      name: "&a%name% (x%amount%)"
+      lore: |-
+        &7 
+        &7Owner: &c%owner%
+        &7Want to pay: &e%price%$
+        &7
+        &a&l&mCLICK TO SELL
+        &7 

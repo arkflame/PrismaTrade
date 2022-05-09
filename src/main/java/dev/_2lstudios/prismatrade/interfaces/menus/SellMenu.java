@@ -40,7 +40,7 @@ public class SellMenu extends PageMenu {
                 MAX_ENTRY_COUNT + 1);
         InterfaceItem[] orderItems = new InterfaceItem[MAX_ENTRY_COUNT];
 
-        context.setTitle(Placeholder.color(config.getString("messages.sell-menu-title")
+        context.setTitle(Placeholder.color(config.getString("menu.sell.title")
                 .replace("%page%", String.valueOf(getPage())).replace("%type%", "SELL")));
 
         for (int i = 0; i < MAX_ENTRY_COUNT && i < dataFound.length; i++) {

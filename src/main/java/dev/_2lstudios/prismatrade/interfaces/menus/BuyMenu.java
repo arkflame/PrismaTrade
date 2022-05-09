@@ -40,7 +40,7 @@ public class BuyMenu extends PageMenu {
                 MAX_ENTRY_COUNT + 1);
         InterfaceItem[] orderItems = new InterfaceItem[MAX_ENTRY_COUNT];
 
-        context.setTitle(Placeholder.color(config.getString("messages.buy-menu-title")
+        context.setTitle(Placeholder.color(config.getString("menu.buy.title")
                 .replace("%page%", String.valueOf(getPage())).replace("%type%", "BUY")));
 
         for (int i = 0; i < MAX_ENTRY_COUNT && i < dataFound.length; i++) {

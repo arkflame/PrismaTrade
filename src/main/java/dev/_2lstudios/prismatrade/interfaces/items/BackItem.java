@@ -14,7 +14,7 @@ public class BackItem extends InterfaceItem {
     public BackItem(Configuration config, InterfaceMenu menu) {
         this.menu = menu;
         setType(Material.ARROW);
-        setName(config.getString("messages.back-name"));
+        setName(config.getString("menu.back-item"));
     }
 
     @Override

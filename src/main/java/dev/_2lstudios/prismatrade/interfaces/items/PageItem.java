@@ -19,11 +19,11 @@ public class PageItem extends InterfaceItem {
 
         switch (type) {
             case NEXT: {
-                setName(config.getString("messages.next-page-name").replace("%page%", page));
+                setName(config.getString("menu.next-page-item").replace("%page%", page));
                 break;
             }
             case PREVIOUS: {
-                setName(config.getString("messages.previous-page-name").replace("%page%", page));
+                setName(config.getString("menu.prev-page-item").replace("%page%", page));
                 break;
             }
             default: {

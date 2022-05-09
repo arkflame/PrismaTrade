@@ -28,8 +28,8 @@ public class CategoryEntryItem extends InterfaceItem {
         this.material = Material.getMaterial(category.getName());
         this.lastMenu = lastMenu;
         setType(material);
-        setName(config.getString("messages.category-entry-name").replace("%category%", category.getName()));
-        setLore(config.getString("messages.category-entry-lore").replace("%category%", category.getName()));
+        setName(config.getString("menu.category.entry.name").replace("%category%", category.getName()));
+        setLore(config.getString("mmenu.category.entry.lore").replace("%category%", category.getName()));
     }
 
     @Override

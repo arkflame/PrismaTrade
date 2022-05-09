@@ -26,10 +26,18 @@ public class BuyEntryItem extends InterfaceItem {
         this.prismaTrade = prismaTrade;
 
         setType(material);
-        setName(config.getString("messages.buy-entry-name").replace("%category%", materialName)
-                .replace("%amount%", amount).replace("%price%", price).replace("%owner%", owner));
-        setLore(config.getString("messages.buy-entry-lore").replace("%category%", materialName)
-                .replace("%amount%", amount).replace("%price%", price).replace("%owner%", owner));
+        setName(config.getString("menu.buy.entry.name")
+            .replace("%name%", materialName)
+            .replace("%amount%", amount)
+            .replace("%price%", price)
+            .replace("%owner%", owner)
+        );
+        setLore(config.getString("menu.buy.entry.lore")
+            .replace("%name%", materialName)
+            .replace("%amount%", amount)
+            .replace("%price%", price)
+            .replace("%owner%", owner)
+        );
     }
 
     @Override
