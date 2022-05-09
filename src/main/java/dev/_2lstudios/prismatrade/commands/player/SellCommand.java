@@ -48,9 +48,9 @@ public class SellCommand extends BaseCommand {
             this.removeItemInHand(player);
 
             player.sendMessage(this.getMessage("sell.placed")
-                .replace("{item}", itemName)
-                .replace("{amount}", String.valueOf(amount))
-                .replace("{price}", String.valueOf(sellPrice))
+                .replace("%item%", itemName)
+                .replace("%amount%", String.valueOf(amount))
+                .replace("%price%", String.valueOf(sellPrice))
             );
         }
     }

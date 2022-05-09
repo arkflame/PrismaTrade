@@ -2,7 +2,7 @@ name: ${name}
 description: ${description}
 author: ${author}
 main: ${mainClass}
-version: ${version}
+version: $%version%
 url: ${url}
 commands:
   prismatrade:

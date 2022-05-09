@@ -32,9 +32,9 @@ public class BuyCommand extends BaseCommand {
         } else {
             this.getAPI().buy(player, material, buyAmount, buyPrice);
             player.sendMessage(this.getMessage("buy.placed")
-                .replace("{item}", material.name())
-                .replace("{amount}", String.valueOf(buyAmount))
-                .replace("{price}", String.valueOf(buyPrice))
+                .replace("%item%", material.name())
+                .replace("%amount%", String.valueOf(buyAmount))
+                .replace("%price%", String.valueOf(buyPrice))
             );
         }
     }

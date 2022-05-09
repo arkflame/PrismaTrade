@@ -25,8 +25,8 @@ public class MainCommand extends BaseCommand {
     public void onExecuted(CommandSender sender, String label, String args[]) {
         sender.sendMessage(
             this.getMessage("admin.help")
-                .replace("{label}", label)
-                .replace("{version}", this.getVersion()
+                .replace("%label%", label)
+                .replace("%version%", this.getVersion()
             )
         );
     }

@@ -85,11 +85,11 @@ public class BaseCommand implements CommandExecutor {
 
     // Default methods to override
     protected void onMissingPermission(CommandSender sender, String permission) {
-        sender.sendMessage(this.getMessage("common.no-permission").replace("{permission}", this.permission));
+        sender.sendMessage(this.getMessage("common.no-permission").replace("%permission%", this.permission));
     }
 
     protected void onBadUsage(CommandSender sender, String label) {
-        sender.sendMessage(this.getMessage(this.name + ".usage").replace("{label}", label));
+        sender.sendMessage(this.getMessage(this.name + ".usage").replace("%label%", label));
     }
 
     // Command handler
