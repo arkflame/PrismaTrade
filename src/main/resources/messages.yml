@@ -1,0 +1,27 @@
+common:
+  not-in-console: "&cThis command cannot be executed from the Console."
+  no-permission: "&cMissing permission {permission} to run this command."
+
+admin:
+  help: |-
+    &7 
+    &8&l☄ &d&lPrismaTrade &8&l☄
+    &7 
+    &b/{label} reload &8- &7Reload plugin config.
+    &7 
+    &cRunning v{version} by LinsaFTW.
+    &7 
+  reloaded: "&aPrismaTrade configuration and messages has been reloaded."
+
+buy:
+  usage: "&cUsage: &b/{label} <item> <amount> <price>"
+  invalid-material: "&cMaterial with this name doesn't exist."
+  invalid-amount: "&cItem amount must be between 1 and 64."
+  invalid-price: "&cPrice must be higher than 0."
+  placed: "&eBuy order placed for {item} x{amount} at {price}$"
+  
+sell:
+  usage: "&cUsage: &b/{label} <price>"
+  invalid-price: "&cPrice must be higher than 0."
+  no-item-in-hand: "&cYou don't have any item in your hand to sell."
+  placed: "&eSell order placed for {item} x{amount} at {price}$"
